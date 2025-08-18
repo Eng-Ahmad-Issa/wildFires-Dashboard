@@ -1,0 +1,65 @@
+.chartGrid {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    padding: 10px 12px;
+    background-color: rgba(18, 18, 18, 0.95);
+    z-index: 500;
+}
+
+.chartWrapper {
+    flex: 1;
+    min-width: 0;
+    height: 260px;
+    background-color: #1e1e1e;
+    border: 1px solid #2d2d2d;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.chartCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.fullscreenChart {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    border-radius: 0;
+    background-color: #1e1e1e;
+}
+
+.fullscreenButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 6px 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.fullscreenButton:hover {
+    background-color: #45a049;
+}
+
+.pieChartContainer,
+.lineChartContainer,
+.barChartContainer {
+    flex: 1;
+    min-width: 0;
+    height: 260px;
+}

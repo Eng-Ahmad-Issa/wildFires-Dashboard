@@ -1,0 +1,397 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+.hide {
+  visibility: hidden;
+}
+
+#intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#intro-overlay img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#intro-overlay.fade-in {
+  opacity: 1;
+}
+
+.main-content {
+  opacity: 0;
+  visibility: visible;
+  transition: opacity 1.5s ease-in-out;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #121212;
+  color: #e0e0e0;
+
+}
+
+header {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  background-color: #121212;
+  color: #e0e0e0;
+  padding: 5px 0;
+}
+
+
+
+header h1 {
+  color: white;
+  font-size: 2em;
+  margin: 0;
+}
+
+.filters {
+  height: 40px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+.filters label {
+  margin-right: 0;
+}
+
+.filters input {
+  width: 100px;
+  background-color: #d8e0e5;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.FiltersBtn {
+  background-color: #b5c8d6;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.FiltersBtn:hover {
+  background-color: #a2b9c9;
+  cursor: pointer;
+}
+
+/* Dropdown Styling */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  background-color: #2d2d2d;
+  color: #f5f5f5;
+}
+
+.dropdownHeader {
+  width: 124px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px;
+  background-color: #262626;
+  border-radius: 5px;
+  margin: 07px 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.dropdownHeader:hover {
+  background-color: #4b4b4b;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+}
+
+.dropdownHeader[title] {
+  cursor: help;
+}
+
+
+.dropdownList {
+  background-color: #1e1e1e;
+  border: 1px solid #333333;
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  max-width: 180px;
+  font-size: 14px;
+  opacity: 0;
+}
+
+.dropdownList.show {
+  max-height: 300px;
+  max-width: 180px;
+  overflow-y: auto;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
+/* Custom scrollbar */
+
+.dropdownList.show::-webkit-scrollbar {
+  width: 4px;
+}
+
+.dropdownList.show::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 20px;
+}
+
+.dropdownList.show::-webkit-scrollbar-thumb {
+  background: rgb(221, 221, 221);
+  border-radius: 20px;
+}
+
+.dropdownList.show::-webkit-scrollbar-thumb:hover {
+  background: rgb(125, 125, 125);
+}
+
+.dropdownList li {
+  padding: 2px 5px;
+  list-style-type: none;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  color: #f5f5f5;
+
+}
+
+.dropdownList li:hover {
+  background-color: #333333;
+}
+
+#dropdownList input[type="checkbox"] {
+  margin-right: 8px;
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+}
+
+#dropdownList label {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.dropdown-item {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.dropdown-item:hover {
+  background-color: #262626;
+}
+
+#YearFrom-Dropdown {
+  margin-left: 70px;
+
+}
+
+/* Chart Container */
+.container {
+  display: flex;
+  height: calc(100vh - 90px);
+  min-height: 400px;
+  width: 100%;
+  position: relative;
+}
+
+#viewDiv {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.chart-container {
+  position: absolute;
+  bottom: 17px;
+  height: 230px;
+  width: 30%;
+  border: 1px solid #2d2d2d;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+#barChart-container {
+  left: 0;
+  margin-left: 5px;
+}
+
+#lineChart-container {
+  left: 35%;
+}
+
+#pieChart-container {
+  right: 0;
+  margin-right: 5px;
+}
+
+.chart-inner {
+  height: 100%;
+  width: 100%;
+}
+
+#barChart,
+#lineChart,
+#pieChart {
+  width: 100%;
+  height: 100%;
+  background-color: #1e1e1e;
+  color: #4d4d4d;
+
+}
+
+.maximize-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background-color: #4d4d4d;
+  font-size: 12px;
+  border: #1e1e1e;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 9000;
+  color: #4d4d4d;
+
+}
+
+.maximize-btn img {
+  height: 20px;
+  cursor: pointer;
+  color: #4d4d4d;
+
+}
+
+
+.fullscreen {
+  position: fixed;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2000;
+  background-color: #4d4d4d;
+  transform: scale(1);
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.fullscreen-exit {
+  transform: scale(0.5);
+  opacity: 0.5;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+
+}
+
+.normal {
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.chart-inner>div {
+  transition: opacity 0.3s ease-in-out;
+}
+
+input[type="checkbox"] {
+  width: 15px;
+  accent-color: #1E88E5;
+}
+
+/* Buttons */
+button {
+  background-color: #424242;
+  color: #424242;
+  border: 1px solid #424242;
+}
+
+button:hover {
+  background-color: #424242;
+  transition: all 0.3s ease-in-out;
+
+}
+
+
+#applyFiltersBtn,
+#resetFiltersBtn {
+  background-color: #1273c7;
+  color: #ffffff;
+  border: none;
+}
+
+#applyFiltersBtn {
+  margin-left: 70px;
+
+}
+
+#applyFiltersBtn:hover,
+#resetFiltersBtn:hover {
+  background-color: #063972;
+  transition: all 0.3s ease-in-out;
+
+}
+
+/* Map */
+.esri-view-root {
+  background-color: #181818;
+}
+
+
+.esri-attribution__sources {
+  font-weight: 300;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 5px;
+  align-self: flex-start;
+  flex: 1 0;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.esri-attribution__powered-by {
+  font-weight: 400;
+  padding: 0 5px;
+  text-align: right;
+  white-space: nowrap;
+  align-self: flex-end;
+  background-color: #121212;
+  color: #e0e0e0;
+}
