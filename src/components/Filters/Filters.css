@@ -108,7 +108,7 @@
 }
 
 .dropdown-option input {
-    accent-color: #4caf50;
+    accent-color: #0034df;
 }
 
 .applyBtn,
@@ -132,12 +132,12 @@
 }
 
 .resetBtn {
-    background-color: #4caf50;
+    background-color: #ae0000;
     color: #fff;
 }
 
 .resetBtn:hover {
-    background-color: #359538;
+    background-color: #930000;
 }
 
 .msd {
@@ -148,7 +148,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 150px;
+    width: 175px;
     background-color: #1e1e1e;
     color: #ffffff;
     border: 1px solid #2d2d2d;
@@ -180,6 +180,7 @@
     border-radius: 6px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     max-height: 240px;
+    width: 175px;
     overflow: auto;
     z-index: 600;
 }
