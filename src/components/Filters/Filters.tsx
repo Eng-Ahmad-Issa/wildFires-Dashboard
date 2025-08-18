@@ -45,10 +45,8 @@ const Filters: React.FC<Props> = ({ layerUrl, dropdowns, defaultText, buttonsIds
       });
 
       const loadDistinctWithLabels = async (field: string): Promise<Labeled[]> => {
-        // If domain exists, use it directly
         if (domainsByField[field]) return domainsByField[field] as Labeled[];
 
-        // Otherwise query distinct values
         const q = layer.createQuery();
         q.where = "1=1";
         q.outFields = [field];

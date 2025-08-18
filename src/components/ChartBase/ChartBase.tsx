@@ -40,7 +40,7 @@ const ChartBase: React.FC<Props> = ({ options, id }) => {
   return (
     <div ref={wrapperRef} className={isFullscreen ? "chartWrapper fullscreenChart" : "chartWrapper"}>
       <button className="fullscreenButton" onClick={() => setIsFullscreen(!isFullscreen)}>
-        {isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
+        {isFullscreen ? "Minimize" : "maximize"}
       </button>
       <div id={id} ref={canvasRef} className="chartCanvas" />
     </div>

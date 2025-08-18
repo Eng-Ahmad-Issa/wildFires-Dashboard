@@ -114,10 +114,7 @@
           "left": "center",
           "textStyle": { "fontSize": 15, "color": "#c2c2c2" }
         },
-        "tooltip": {
-          "trigger": "item",
-          "formatter": "{b}: {d}%"
-        },
+        "tooltip": { "trigger": "item", "formatter": "{b}: {d}%" },
         "legend": {
           "orient": "vertical",
           "right": "1%",
@@ -128,14 +125,11 @@
           {
             "name": "Cause",
             "type": "pie",
-            "radius": ["20%", "50%"],
-            "center": ["40%", "55%"],
-            "label": {
-              "formatter": "{b}: {d}%",
-              "fontSize": 10,
-              "show": true,
-              "position": "outside"
-            }
+            "radius": ["25%", "55%"],
+            "center": ["30%", "55%"],
+            "label": { "formatter": "{b}: {d}%", "fontSize": 14, "show": false, "position": "center" },
+            "emphasis": { "label": { "show": true, "fontSize": 16 } },
+            "labelLine": { "show": false }
           }
         ],
         "backgroundColor": "#1e1e1e",
@@ -147,11 +141,7 @@
         "groupByFieldsForStatistics": ["CAUSE"],
         "orderByFields": [],
         "outStatistics": [
-          {
-            "onStatisticField": "CAUSE",
-            "outStatisticFieldName": "totalFires",
-            "statisticType": "count"
-          }
+          { "onStatisticField": "CAUSE", "outStatisticFieldName": "totalFires", "statisticType": "count" }
         ]
       }
     },
@@ -160,7 +150,7 @@
       "id": "lineChart",
       "options": {
         "title": {
-          "text": "Fire Trends: Human-caused vs Natural",
+          "text": "Causes: Human vs Natural",
           "left": "center",
           "textStyle": { "fontSize": 15, "color": "#c2c2c2" }
         },
@@ -225,9 +215,7 @@
         "rangeField": "YEAR_",
         "categoryField": "CAUSE",
         "categories": {
-          "Human-caused": [
-            2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 18, 19
-          ],
+          "Human-caused": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 18, 19],
           "Natural-caused": [1, 14, 17]
         }
       }
