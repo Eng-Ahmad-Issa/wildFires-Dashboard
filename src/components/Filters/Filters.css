@@ -17,7 +17,7 @@
 }
 
 .filterLabel {
-    color: #c2c2c2;
+    color: #ffffff;
     font-size: 14px;
     white-space: nowrap;
 }
@@ -31,6 +31,7 @@
     font-size: 14px;
     padding: 6px 10px 6px 10px;
     min-width: 100px;
+    height: 30px;
     text-align: center;
     cursor: pointer;
     outline: none;
