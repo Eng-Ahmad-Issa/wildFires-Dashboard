@@ -31,7 +31,7 @@ const Filters: React.FC<Props> = ({ layerUrl, dropdowns, defaultText, buttonsIds
       if (cancelled) return;
 
       const layer = new FeatureLayer({ url: layerUrl, outFields: ["*"] });
-      await layer.load(); // <-- ensure domains/fields are available
+      await layer.load();
 
       const domainsByField: Record<string, Labeled[] | undefined> = {};
       (layer.fields || []).forEach((f: any) => {
