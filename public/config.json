@@ -9,9 +9,9 @@
   },
   "dropdowns": [
     {
-      "id": "CAUSE-Dropdown",
-      "selectedTextId": "selectedCause",
-      "fieldName": "CAUSE",
+      "id": "STATE-Dropdown",
+      "selectedTextId": "selectedState",
+      "fieldName": "STATE",
       "isMultiSelect": true
     },
     {
@@ -21,9 +21,9 @@
       "isMultiSelect": true
     },
     {
-      "id": "STATE-Dropdown",
-      "selectedTextId": "selectedState",
-      "fieldName": "STATE",
+      "id": "CAUSE-Dropdown",
+      "selectedTextId": "selectedCause",
+      "fieldName": "CAUSE",
       "isMultiSelect": true
     },
     {
