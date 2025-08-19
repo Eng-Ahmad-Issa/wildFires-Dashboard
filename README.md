@@ -1,50 +1,65 @@
-# React + TypeScript + Vite
+# Wildfires Insights (React + Vite + ArcGIS + ECharts)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Repository
+https://github.com/Eng-Ahmad-Issa/wildFires-Dashboard
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+How to run it?
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
+- Node.js ≥ 18 (LTS recommended)
+- npm (bundled with Node)
 
-- Configure the top-level `parserOptions` property like this:
+1) Install
+```bash
+npm install
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+2) Run in development
+npm run dev
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
+Breif:
+An interactive dashboard that visualizes historical wildfires with an ArcGIS web map and three charts (bar, pie, line). Filters (State, Forest Unit, Cause, Year range) load dynamically from the ArcGIS Feature Service — nothing is hardcoded — and all chart options/queries are driven by `public/config.json`.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-});
-```
+## Features
+
+- ArcGIS map with FeatureLayer and live filtering via `definitionExpression`
+- Dynamic filters populated from the service (coded value **names** shown, **codes** used in queries)
+- Year range (From/To) with numeric-safe SQL builder
+- Charts powered by ECharts:
+  - Bar: yearly fire counts
+  - Pie: top causes (domain names)
+  - Line: Human-caused vs Natural trends (nulls excluded)
+- Fullscreen mode for each chart
+- Config-driven behavior via `public/config.json`
+- React + TypeScript + Vite for a fast DX
+
+
+
+Project Structure
+root
+├─ public/
+│  └─ config.json        # App configuration (map, layer, filters, charts)
+├─ src/
+│  ├─ components/
+│  │  ├─ Header/
+│  │  ├─ Filters/
+│  │  │  ├─ Filters.tsx  # Loads domain names & distinct values, renders dropdowns
+│  │  │  └─ Filters.css
+│  │  ├─ MultiSelectDropdown.tsx
+│  │  ├─ MapView/
+│  │  │  ├─ MapView.tsx  # ArcGIS Map + FeatureLayer; updates definitionExpression
+│  │  │  └─ MapView.css
+│  │  ├─ ChartBase/
+│  │  │  ├─ ChartBase.tsx # ECharts init/resize/fullscreen
+│  │  │  └─ ChartBase.css
+│  │  ├─ BarChart/BarChart.tsx
+│  │  ├─ PieChart/PieChart.tsx
+│  │  └─ LineChart/LineChart.tsx
+│  ├─ App.tsx            # Loads config.json, builds SQL where, wires everything
+│  ├─ main.tsx
+│  └─ index.css
+├─ package.json
+└─ vite.config.ts
