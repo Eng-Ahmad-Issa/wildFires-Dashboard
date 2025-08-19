@@ -16,7 +16,7 @@ const MapView: React.FC<Props> = ({ layerUrl, where }) => {
         if (cancelled || !mapDiv.current) return;
         const layer = new FeatureLayer({ url: layerUrl, outFields: ["*"], definitionExpression: "1=1" });
         const map = new EsriMap({ basemap: "dark-gray-vector", layers: [layer] });
-        const view = new MapView({ container: mapDiv.current, map, center: [-120, 33], zoom: 4 });
+        const view = new MapView({ container: mapDiv.current, map, center: [-120, 36], zoom: 5 });
         viewRef.current = view;
         layerRef.current = layer;
       }
