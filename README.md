@@ -3,24 +3,23 @@
 ## Repository
 https://github.com/Eng-Ahmad-Issa/wildFires-Dashboard
 
-
-## Getting Started
-
 How to run it?
 
 ### Prerequisites
 - Node.js ≥ 18 (LTS recommended)
 - npm (bundled with Node)
 
+Download the code from the GitHub Repository link or the zip file, then open the wildFires-Dashboard folder and open the terminal/cmd.
+
 1) Install
-```bash
 npm install
 
 2) Run in development
 npm run dev
 
 
-Breif:
+
+Brief:
 An interactive dashboard that visualizes historical wildfires with an ArcGIS web map and three charts (bar, pie, line). Filters (State, Forest Unit, Cause, Year range) load dynamically from the ArcGIS Feature Service — nothing is hardcoded — and all chart options/queries are driven by `public/config.json`.
 
 ## Features
@@ -38,28 +37,5 @@ An interactive dashboard that visualizes historical wildfires with an ArcGIS web
 
 
 
-Project Structure
-root
-├─ public/
-│  └─ config.json        # App configuration (map, layer, filters, charts)
-├─ src/
-│  ├─ components/
-│  │  ├─ Header/
-│  │  ├─ Filters/
-│  │  │  ├─ Filters.tsx  # Loads domain names & distinct values, renders dropdowns
-│  │  │  └─ Filters.css
-│  │  ├─ MultiSelectDropdown.tsx
-│  │  ├─ MapView/
-│  │  │  ├─ MapView.tsx  # ArcGIS Map + FeatureLayer; updates definitionExpression
-│  │  │  └─ MapView.css
-│  │  ├─ ChartBase/
-│  │  │  ├─ ChartBase.tsx # ECharts init/resize/fullscreen
-│  │  │  └─ ChartBase.css
-│  │  ├─ BarChart/BarChart.tsx
-│  │  ├─ PieChart/PieChart.tsx
-│  │  └─ LineChart/LineChart.tsx
-│  ├─ App.tsx            # Loads config.json, builds SQL where, wires everything
-│  ├─ main.tsx
-│  └─ index.css
-├─ package.json
-└─ vite.config.ts
+
+
