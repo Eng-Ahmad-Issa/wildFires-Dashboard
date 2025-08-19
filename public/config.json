@@ -1,9 +1,4 @@
 {
-  "mapSettings": {
-    "basemap": "dark-gray-vector",
-    "initialCenter": [-120, 33],
-    "initialZoom": 4
-  },
   "layer": {
     "url": "https://services.gis.ca.gov/arcgis/rest/services/Environment/Wildfires/MapServer/0"
   },
@@ -128,7 +123,7 @@
             "radius": ["40%", "75%"],
             "center": ["70%", "55%"],
             "label": { "formatter": "{b}: {d}%", "fontSize": 18, "show": false, "position": "center" },
-            "emphasis": { "label": { "show": true, "fontSize": 16, "color": "#ffffff"} },
+            "emphasis": { "label": { "show": true, "fontSize": 16, "color": "#ffffff" } },
             "labelLine": { "show": false }
           }
         ],
