@@ -19,9 +19,9 @@ An interactive dashboard that visualizes historical wildfires with an ArcGIS web
 - Config-driven behavior via `public/config.json`
 - React + TypeScript + Vite for a fast DX
 
-How to run it?
 
-### Prerequisites
+### How to run it?
+# Prerequisites
 - Node.js ≥ 18 (LTS recommended)
 - npm (bundled with Node)
 
