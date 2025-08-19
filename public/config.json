@@ -56,20 +56,10 @@
         "grid": {
           "left": "2%",
           "right": "5%",
-          "bottom": "15%",
+          "bottom": "10%",
           "top": "20%",
           "containLabel": true
         },
-        "dataZoom": [
-          { "type": "inside", "start": 0, "end": 100 },
-          {
-            "type": "slider",
-            "height": 20,
-            "bottom": 15,
-            "start": 0,
-            "end": 100
-          }
-        ],
         "xAxis": {
           "type": "category",
           "axisLine": { "lineStyle": { "color": "#636363" } },
@@ -176,20 +166,10 @@
         "grid": {
           "left": "2%",
           "right": "5%",
-          "bottom": "15%",
+          "bottom": "10%",
           "top": "20%",
           "containLabel": true
         },
-        "dataZoom": [
-          { "type": "inside", "start": 0, "end": 100 },
-          {
-            "type": "slider",
-            "height": 20,
-            "bottom": 15,
-            "start": 0,
-            "end": 100
-          }
-        ],
         "backgroundColor": "#1e1e1e",
         "textStyle": { "color": "#636363" },
         "axisPointer": { "lineStyle": { "color": "#636363" } }
