@@ -3,22 +3,6 @@
 ## Repository
 https://github.com/Eng-Ahmad-Issa/wildFires-Dashboard
 
-How to run it?
-
-### Prerequisites
-- Node.js ≥ 18 (LTS recommended)
-- npm (bundled with Node)
-
-Download the code from the GitHub Repository link or the zip file, then open the wildFires-Dashboard folder and open the terminal/cmd.
-
-1) Install
-npm install
-
-2) Run in development
-npm run dev
-
-
-
 Brief:
 An interactive dashboard that visualizes historical wildfires with an ArcGIS web map and three charts (bar, pie, line). Filters (State, Forest Unit, Cause, Year range) load dynamically from the ArcGIS Feature Service — nothing is hardcoded — and all chart options/queries are driven by `public/config.json`.
 
@@ -35,7 +19,20 @@ An interactive dashboard that visualizes historical wildfires with an ArcGIS web
 - Config-driven behavior via `public/config.json`
 - React + TypeScript + Vite for a fast DX
 
+How to run it?
 
+### Prerequisites
+- Node.js ≥ 18 (LTS recommended)
+- npm (bundled with Node)
+
+Download the code from the GitHub Repository link or the zip file, then open the wildFires-Dashboard folder and open the terminal/cmd.
+
+```bash
+1) Install
+npm install
+
+2) Run in development
+npm run dev
 
 
 
