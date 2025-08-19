@@ -6,34 +6,32 @@
   overflow: hidden;
 }
 
-.mapBorder {
-  border: 2px solid #2d2d2d;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+.compassImage {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 100px;
+  height: 100px;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .esri-attribution__sources {
-  font-size: 12px;
-  color: #c2c2c2;
-  padding: 5px;
+  display: none !important;
 }
 
 .esri-attribution__powered-by {
-  font-size: 12px;
-  color: #c2c2c2;
+  display: none !important;
 }
 
 .esri-component.esri-zoom {
-  background-color: #1e1e1e;
-  border: 1px solid #333;
-  border-radius: 4px;
-  color: white;
+  display: none !important;
 }
 
 .esri-component.esri-zoom .esri-widget-button {
-  background-color: #2d2d2d;
+  display: none !important;
 }
 
 .esri-component.esri-zoom .esri-widget-button:hover {
-  background-color: #4CAF50;
-  color: white;
+  display: none !important;
 }

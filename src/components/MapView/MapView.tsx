@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import { loadModules } from "esri-loader";
 import "./MapView.css";
+import compass from "./compass.png";
+
 
 type Props = { layerUrl: string; where: string };
 
@@ -33,7 +35,11 @@ const MapView: React.FC<Props> = ({ layerUrl, where }) => {
     if (layerRef.current) layerRef.current.definitionExpression = where || "1=1";
   }, [where]);
 
-  return <div id="mapView" ref={mapDiv} className="mapViewContainer" />;
+return (
+  <div id="mapView" ref={mapDiv} className="mapViewContainer">
+    <img src={compass} alt="Compass" className="compassImage" />
+  </div>
+);
 };
 
 export default MapView;
