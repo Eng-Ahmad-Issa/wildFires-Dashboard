@@ -1,0 +1,53 @@
+.chartWrapper {
+    flex: 1;
+    min-width: 0;
+    height: 240px;
+    background-color: #1e1e1e;
+    border: 1px solid #2d2d2d;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.chartCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.fullscreenChart {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    border-radius: 0;
+    background-color: #1e1e1e;
+}
+
+.fullscreenButton {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    font-size: 12px;
+    color: #fff;
+    background-color: #003cff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.fullscreenButton:hover {
+    background-color: #0034df;
+}
+
+.pieChartContainer,
+.lineChartContainer,
+.barChartContainer {
+    flex: 1;
+    min-width: 0;
+    height: 260px;
+}

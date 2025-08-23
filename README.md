@@ -1,27 +1,37 @@
-# Salone - Free Bootstrap 5 Business Template 
+# Wildfires Insights (React + Vite + ArcGIS + ECharts)
 
-- [Demo](https://themewagon.github.io/Electro-Bootstrap/)
+## Repository
+https://github.com/Eng-Ahmad-Issa/wildFires-Dashboard
 
-#### Download
+## Brief and Features
+An interactive dashboard that visualizes historical wildfires with an ArcGIS web map and three charts (bar, pie, line). Filters (State, Forest Unit, Cause, Year range) load dynamically from the ArcGIS Feature Service — nothing is hardcoded — and all chart options/queries are driven by `public/config.json`.
 
-- [Download from ThemeWagon](https://themewagon.com/themes/electro-bootstrap/)
 
-## Getting Started
+- ArcGIS map with FeatureLayer and live filtering via `definitionExpression`
+- Dynamic filters populated from the service (coded value **names** shown, **codes** used in queries)
+- Year range (From/To) with numeric-safe SQL builder
+- Charts powered by ECharts:
+  - Bar: yearly fire counts
+  - Pie: top causes of fires
+  - Line: Human-caused vs Natural trends
+- Fullscreen mode for each chart
+- Config-driven behavior via `public/config.json`
+- React + TypeScript + Vite for a fast DX
 
-Clone Repository
 
-```
-https://github.com/themewagon/Electro-Bootstrap.git
-```
+## How to run it?
+### Prerequisites
+- Node.js ≥ 18 (LTS recommended)
+- npm (bundled with Node)
 
-## Author
+Download the code from the GitHub Repository link or the zip file, then open the wildFires-Dashboard folder and open the terminal/cmd.
 
-```
-Salone is developed by Team HTML Codex.
-```
+```bash
+1) Install
+npm install
 
-## License
+2) Run in development
+npm run dev
 
-- Design and Code is Copyright &copy; [HTML Codex](https://htmlcodex.com/).
-- Licensed cover under [MIT]
-- Distributed by [ThemeWagon](https://themewagon.com)
+
+

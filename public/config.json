@@ -1,0 +1,235 @@
+{
+  "layer": {
+    "url": "https://services.gis.ca.gov/arcgis/rest/services/Environment/Wildfires/MapServer/0"
+  },
+  "dropdowns": [
+    {
+      "id": "STATE-Dropdown",
+      "selectedTextId": "selectedState",
+      "fieldName": "STATE",
+      "isMultiSelect": true
+    },
+    {
+      "id": "UNIT_ID-Dropdown",
+      "selectedTextId": "selectedForest",
+      "fieldName": "UNIT_ID",
+      "isMultiSelect": true
+    },
+    {
+      "id": "CAUSE-Dropdown",
+      "selectedTextId": "selectedCause",
+      "fieldName": "CAUSE",
+      "isMultiSelect": true
+    },
+    {
+      "id": "YearFrom-Dropdown",
+      "selectedTextId": "selectedYearFrom",
+      "fieldName": "YEAR_",
+      "isMultiSelect": false
+    },
+    {
+      "id": "YearTo-Dropdown",
+      "selectedTextId": "selectedYearTo",
+      "fieldName": "YEAR_",
+      "isMultiSelect": false
+    }
+  ],
+  "defaultText": {
+    "selectedYearFrom": "Select Year",
+    "selectedYearTo": "Select Year",
+    "selectedState": "Select a State",
+    "selectedForest": "Select a Forest",
+    "selectedCause": "Select a Cause"
+  },
+
+  "charts": [
+    {
+      "type": "bar",
+      "id": "barChart",
+      "options": {
+        "title": {
+          "text": "Wildfires Numbers",
+          "left": "center",
+          "textStyle": { "fontSize": 15, "color": "#c2c2c2" }
+        },
+        "tooltip": { "trigger": "axis", "axisPointer": { "type": "shadow" } },
+        "grid": {
+          "left": "2%",
+          "right": "5%",
+          "bottom": "10%",
+          "top": "20%",
+          "containLabel": true
+        },
+        "xAxis": {
+          "type": "category",
+          "axisLine": { "lineStyle": { "color": "#636363" } },
+          "axisLabel": { "color": "#636363" },
+          "splitLine": { "lineStyle": { "color": "#636363" } }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Fires No.",
+          "axisLine": { "lineStyle": { "color": "#636363" } },
+          "axisLabel": { "color": "#636363" },
+          "splitLine": { "lineStyle": { "color": "#636363" } }
+        },
+        "series": [{ "type": "bar", "itemStyle": { "color": "#4CAF50" } }],
+        "backgroundColor": "#1e1e1e",
+        "textStyle": { "color": "#636363" }
+      },
+      "query": {
+        "initialFilter": "",
+        "groupByFieldsForStatistics": ["YEAR_"],
+        "orderByFields": ["YEAR_ ASC"],
+        "outStatistics": [
+          {
+            "onStatisticField": "YEAR_",
+            "outStatisticFieldName": "totalFires",
+            "statisticType": "count"
+          }
+        ]
+      }
+    },
+    {
+      "type": "pie",
+      "id": "pieChart",
+      "options": {
+        "title": {
+          "text": "Top Causes of Wildfires",
+          "left": "center",
+          "textStyle": { "fontSize": 15, "color": "#c2c2c2" }
+        },
+        "tooltip": { "trigger": "item", "formatter": "{b}: {d}%" },
+        "legend": {
+          "orient": "vertical",
+          "left": "1%",
+          "bottom": "1%",
+          "textStyle": { "fontSize": 12, "color": "#c2c2c2" }
+        },
+        "series": [
+          {
+            "name": "Cause",
+            "type": "pie",
+            "radius": ["40%", "75%"],
+            "center": ["70%", "55%"],
+            "label": { "formatter": "{b}: {d}%", "fontSize": 18, "show": false, "position": "center" },
+            "emphasis": { "label": { "show": true, "fontSize": 16, "color": "#ffffff" } },
+            "labelLine": { "show": false }
+          }
+        ],
+        "backgroundColor": "#1e1e1e",
+        "textStyle": { "color": "#636363" }
+      },
+      "topLimit": 5,
+      "query": {
+        "initialFilter": "",
+        "groupByFieldsForStatistics": ["CAUSE"],
+        "orderByFields": [],
+        "outStatistics": [
+          { "onStatisticField": "CAUSE", "outStatisticFieldName": "totalFires", "statisticType": "count" }
+        ]
+      }
+    },
+    {
+      "type": "line",
+      "id": "lineChart",
+      "options": {
+        "title": {
+          "text": "Causes: Human vs Natural",
+          "left": "center",
+          "textStyle": { "fontSize": 15, "color": "#c2c2c2" }
+        },
+        "tooltip": { "trigger": "axis" },
+        "xAxis": {
+          "type": "category",
+          "axisLine": { "lineStyle": { "color": "#636363" } },
+          "axisLabel": { "color": "#636363" }
+        },
+        "yAxis": {
+          "type": "value",
+          "name": "Fires No.",
+          "axisLine": { "lineStyle": { "color": "#f5f5f5" } },
+          "axisLabel": { "color": "#636363" }
+        },
+        "series": [
+          {
+            "name": "Human-caused",
+            "type": "line",
+            "itemStyle": { "color": "#4CAF50" }
+          },
+          {
+            "name": "Natural-caused",
+            "type": "line",
+            "itemStyle": { "color": "#738cfa" }
+          }
+        ],
+        "grid": {
+          "left": "2%",
+          "right": "5%",
+          "bottom": "10%",
+          "top": "20%",
+          "containLabel": true
+        },
+        "backgroundColor": "#1e1e1e",
+        "textStyle": { "color": "#636363" },
+        "axisPointer": { "lineStyle": { "color": "#636363" } }
+      },
+      "query": {
+        "initialFilter": "",
+        "groupByFieldsForStatistics": ["YEAR_", "CAUSE"],
+        "orderByFields": ["YEAR_ ASC", "CAUSE ASC"],
+        "outStatistics": [
+          {
+            "onStatisticField": "YEAR_",
+            "outStatisticFieldName": "totalFires",
+            "statisticType": "count"
+          }
+        ]
+      },
+      "groupBy": {
+        "rangeField": "YEAR_",
+        "categoryField": "CAUSE",
+        "categories": {
+          "Human-caused": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 18, 19],
+          "Natural-caused": [1, 14, 17]
+        }
+      }
+    }
+  ],
+  "ButtonsIds": {
+    "applyButton": "applyFiltersBtn",
+    "resetButton": "resetFiltersBtn",
+    "maximizeButtons": ".maximize-btn"
+  },
+
+  "DefinitionExpressionQuery": {
+    "castYearAsInt": true,
+    "filters": [
+      {
+        "type": "state",
+        "field": "STATE",
+        "selector": "#STATE-Dropdown input[type=\"checkbox\"]:checked",
+        "operator": "IN"
+      },
+      {
+        "type": "forest",
+        "field": "UNIT_ID",
+        "selector": "#UNIT_ID-Dropdown input[type=\"checkbox\"]:checked",
+        "operator": "IN"
+      },
+      {
+        "type": "cause",
+        "field": "CAUSE",
+        "selector": "#CAUSE-Dropdown input[type=\"checkbox\"]:checked",
+        "operator": "IN"
+      },
+      {
+        "type": "yearRange",
+        "field": "YEAR_",
+        "fromSelector": "selectedYearFrom",
+        "toSelector": "selectedYearTo",
+        "operator": "BETWEEN"
+      }
+    ]
+  }
+}
